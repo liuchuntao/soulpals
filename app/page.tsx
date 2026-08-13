@@ -1,16 +1,136 @@
 "use client";
-import {useState} from "react";
-const caps=[["认识你","身份与场景连续","知道此刻正在陪伴谁，也知道你正处在怎样的家庭场景。"],["记得你","经历与承诺延续","把重要的人、事、偏好与约定沉淀为可管理的长期记忆。"],["理解你","情绪与意图判断","结合语言、语气、表情与情境，判断回应、询问或保持安静。"],["陪着你","表达与行动","用数字人的语言、表情和动作回应，也能连接设备与家庭服务。"]];
-const faqs=[["和智能音箱有什么不同？","智能音箱通常完成一次指令；灵伴拥有持续身份、长期记忆与关系状态，能够跨会话理解用户，并在合适时机主动陪伴。"],["会一直录音或监控家人吗？","不会。产品按最小必要原则使用麦克风、摄像头与传感器，并提供清晰的状态提示、权限开关和记忆删除能力。"],["底层大模型可以更换吗？","可以。大模型是通用能力底座，灵伴智能体中枢负责身份、记忆、决策、工具调用、安全与数字人表达。"]];
-export default function Home(){const[open,setOpen]=useState(0);return <main>
- <nav className="nav wrap"><a className="brand" href="#top"><i>∞</i>灵伴</a><div><a href="#position">产品定位</a><a href="#experience">陪伴体验</a><a href="#platform">智能体中枢</a><a href="#trust">安全与隐私</a></div><a className="btn small" href="#contact">预约体验</a></nav>
- <section className="hero wrap" id="top"><div className="heroCopy"><small>LINGBAN · FAMILY AI COMPANION</small><h1>有记忆、懂情绪、<br/><em>能陪伴的 AI 数字家人</em></h1><p>不是给硬件增加一个聊天模型，而是让每台设备承载一个持续存在的 Agent 个体——认识你、记得你、理解你，也能陪你行动。</p><div className="actions"><a className="btn" href="#experience">看看它如何陪伴</a><a href="#platform">了解灵伴智能体中枢 →</a></div><div className="proof"><span>✓ 跨会话长期记忆</span><span>✓ 多模态情绪理解</span><span>✓ 数字人自然表达</span></div></div><div className="heroArt"><div className="glow"/><div className="device"><header><b>●</b> 灵伴正在陪你 <span>•••</span></header><div className="person"><div className="hair"/><div className="head"><i/><i/><b/></div><div className="body"/></div><p>欢迎回家。今天看起来有点累，要先休息一会儿吗？</p><footer>▮ ▮▮ ▮▮▮ ▮▮ ▮</footer></div><aside className="memo"><small>长期记忆</small><b>记得你周四要复诊</b><span>刚刚更新</span></aside><aside className="mood"><small>情绪感知</small><b>疲惫 · 需要安静陪伴</b><span>语音 + 表情 + 情境</span></aside></div></section>
- <section className="section wrap" id="position"><div className="heading"><small>01 · 产品定位</small><h2>从每次重新聊天，升级为<br/>长期记住并持续陪伴</h2><p>真正的产品不是一次回答，而是一段能够持续积累的关系。</p></div><div className="compare"><article className="old"><small>传统聊天硬件</small><h3>唤醒 → 提问 → 回答 → 结束</h3><p>被动响应 · 单次会话</p><ul><li>没有持续身份</li><li>没有长期记忆</li><li>每次交互都像第一次见面</li></ul></article><div className="up">升级为 <b>→</b></div><article className="new"><small>持续存在的 AI 数字家人</small><div>{caps.map((c,i)=><span className={"c"+i} key={c[0]}><b>{c[0]}</b><em>{c[1]}</em></span>)}</div><footer>数字人表达 × 实体设备 × 家庭服务 <b>越用越懂你</b></footer></article></div></section>
- <section className="section soft" id="experience"><div className="wrap"><div className="heading center"><small>02 · 陪伴体验</small><h2>不是更会说，而是真的更懂你</h2><p>灵伴把感知、记忆、理解与行动，串成一个完整陪伴闭环。</p></div><div className="capGrid">{caps.map((c,i)=><article key={c[0]}><small>0{i+1}</small><h3 className={"c"+i}>{c[0]}</h3><b>{c[1]}</b><p>{c[2]}</p></article>)}</div><div className="flow"><header><small>一次陪伴如何发生</small><b>从你走进家门，到它做出合适回应</b></header><div>{["感知你和环境","理解情绪与意图","读取记忆与关系","决定回应或行动","表达、服务并成长"].map((x,i)=><span key={x}><i>{i+1}</i>{x}{i<4&&<b>→</b>}</span>)}</div></div></div></section>
- <section className="section story wrap"><div><small className="blue">真实的一天 · 20:10</small><h2>它记得的不只是信息，<br/>还有共同生活的上下文</h2><p>回到家，灵伴识别出是你，也注意到你语速变慢。它没有立刻追问，而是结合日程和最近的睡眠状态，先给你留出一点安静。</p><aside>✓ <b>关系在延续</b><span>“上次你压力大时，更希望先安静一会儿。”</span></aside></div><div className="chat"><header><i>灵</i><b>灵伴</b><small>在客厅 · 在线</small></header><p>欢迎回家。今天辛苦了，要不要先把灯光调暗一点？</p><p>嗯，先安静一会儿吧。</p><footer>⌁ <b>已调暗客厅灯光</b><span>记住：今晚需要安静陪伴</span></footer></div></section>
- <section className="section platform" id="platform"><div className="wrap"><div className="heading dark"><small>03 · 产品核心</small><h2>大模型提供通用能力，<br/>智能体中枢把能力组织成产品</h2><p>模型可以更换；身份、关系、记忆、场景数据与评测体系会持续积累。</p></div><div className="diagram"><article><small>外部通用能力</small><h3>模型与云服务</h3><span>LLM 理解与生成</span><span>视觉 / 语音模型</span><span>ASR / TTS</span></article><b>组织成产品 →</b><article className="brain"><small>我们自主研发</small><h3>灵伴智能体中枢</h3><div><span><b>Agent 运行与编排</b>路由、任务、工具、恢复</span><span><b>长期记忆与关系</b>写入、检索、纠错、遗忘</span><span><b>角色与具身表达</b>人格、情绪、行为、数字人</span><span><b>安全、评测与运营</b>权限、日志、回放、指标</span></div></article><b>形成体验 →</b><article className="result"><small>用户获得</small><h3>持续存在的 AI 数字家人</h3><span>✓ 认识我</span><span>✓ 记得我</span><span>✓ 理解我</span><span>✓ 能行动</span></article></div><div className="assets"><b>真正沉淀的产品资产</b><span>智能体系统</span><span>用户关系</span><span>场景数据</span><span>评测体系</span></div></div></section>
- <section className="section wrap" id="trust"><div className="trust"><div><small className="blue">04 · 安全与隐私</small><h2>亲近感的前提，<br/>是边界始终清晰</h2><p>每次交互都经过身份确认、数据权限、内容安全与操作风险校验；结果可追溯、可纠正、可撤销。</p></div><div>{[["权限透明","相机、麦克风、记忆和设备控制都有明确授权与状态提示。"],["记忆可控","支持查看、纠错、遗忘与删除，不把所有信息都变成长记忆。"],["家庭保护","按成员身份配置能力边界，高风险动作需二次确认。"],["全链路可追溯","关键决策、工具调用与结果都有日志、回放和评测。"]].map((x,i)=><article key={x[0]}><small>0{i+1}</small><b>{x[0]}</b><p>{x[1]}</p></article>)}</div></div></section>
- <section className="section faq wrap"><div><small className="blue">常见问题</small><h2>你可能还想知道</h2></div><div>{faqs.map((f,i)=><button onClick={()=>setOpen(open===i?-1:i)} key={f[0]}><span><b>{f[0]}</b><em>{open===i?"−":"+"}</em></span>{open===i&&<p>{f[1]}</p>}</button>)}</div></section>
- <section className="cta wrap" id="contact"><div><small>灵伴 AI 数字家人</small><h2>让 AI 不只回答你，<br/>而是真正陪伴你。</h2><p>面向家庭长期陪伴场景，打造有身份、有记忆、能行动的 AI 伙伴。</p></div><a className="btn white" href="mailto:hello@lingban.ai">预约产品体验</a></section>
- <footer className="footer wrap"><a className="brand" href="#top"><i>∞</i>灵伴</a><p>有记忆、懂情绪、能陪伴的 AI 数字家人</p><span>© 2026 Lingban AI</span></footer>
- </main>}
+
+import { useState } from "react";
+import Image from "next/image";
+
+const abilities = [
+  ["01", "感知现实", "通过声音、画面、触摸和设备状态，理解谁在场、发生了什么。"],
+  ["02", "延续关系", "记住共同经历、偏好与承诺，即使更换模型，关系也不会重置。"],
+  ["03", "判断时机", "结合情绪、情境与关系，决定回应、询问、行动，还是保持安静。"],
+  ["04", "具身行动", "用 3D 表情、动作和声音自然表达，也能连接设备与现实服务。"],
+];
+
+const relationshipSkills = [
+  ["容得下沉默", "问题不必立刻有答案。你还没准备好行动时，它不会急着建议或追问。"],
+  ["接得住具体感受", "不说空洞的“都会好的”，而是理解这件事为什么会让你如此在意。"],
+  ["分享真实的喜悦", "好消息不只得到一句恭喜，它会记住细节，跟上你的兴奋。"],
+  ["有分寸地不同意", "先接住感受，也不会盲目迎合伤害你的绝对判断。"],
+];
+
+const finishes = [
+  ["曜石黑", "/product/d1-black.png"],
+  ["月岩银", "/product/d1-silver.png"],
+  ["星云白", "/product/d1-white.png"],
+  ["樱雾粉", "/product/d1-pink.png"],
+];
+
+const faqs = [
+  ["它和智能音箱有什么不同？", "智能音箱完成指令，D1 承载一个持续存在的 AI 角色。它有形象、性格和长期记忆，会在共同生活中越来越懂你。"],
+  ["可以使用我喜欢的角色吗？", "可以。你可以选择、创建或导入角色，并配置人物背景、性格、关系、声音和技能。"],
+  ["只能在 D1 上和角色互动吗？", "不是。角色和关系可以在 D1 与手机端之间延续，让陪伴不被单一设备限制。"],
+  ["底层大模型可以切换吗？", "可以。灵伴智能体中枢负责身份、记忆、决策和表达，底层可按场景接入不同模型能力。"],
+];
+
+export default function Home() {
+  const [finish, setFinish] = useState(0);
+  const [faq, setFaq] = useState(0);
+
+  return (
+    <main>
+      <nav className="nav shell">
+        <a className="brand" href="#top" aria-label="灵伴首页"><i aria-hidden="true" />灵伴</a>
+        <div className="navLinks">
+          <a href="#companion">陪伴体验</a><a href="#relationship">关系能力</a><a href="#d1">D1 机甲</a><a href="#platform">智能体中枢</a>
+        </div>
+        <a className="navCta" href="#contact">预约体验</a>
+      </nav>
+
+      <section className="hero" id="top">
+        <div className="heroGlow" />
+        <div className="shell heroGrid">
+          <div className="heroCopy">
+            <span className="eyebrow">LINGBAN D1 · PERSISTENT AI COMPANION</span>
+            <h1>不只会聊天，<br /><em>而是持续存在</em></h1>
+            <p>灵伴 D1 承载一个有身份、有记忆、有边界的 AI 个体。它通过真实世界与你相处，也在每一天的共同经历中越来越懂你。</p>
+            <div className="heroActions">
+              <a className="primary" href="#films">观看产品影片 <b>▶</b></a>
+              <a className="textLink" href="#d1">探索 D1 机甲形态 →</a>
+            </div>
+            <div className="heroFacts"><span>情商与智商融合</span><span>长期关系记忆</span><span>感知到行动闭环</span></div>
+          </div>
+          <div className="heroProduct">
+            <div className="orbit orbitOne" /><div className="orbit orbitTwo" />
+            <Image src="/product/d1-hero.png" alt="灵伴 D1 主机与四足机甲底座" width={1248} height={702} priority unoptimized />
+            <div className="floatCard memory"><small>LONG-TERM MEMORY</small><b>记得你昨天没睡好</b><span>已调整今早的唤醒方式</span></div>
+            <div className="floatCard online"><i /> 角色在线 · 正在看着你</div>
+          </div>
+        </div>
+        <div className="scrollHint">向下探索 <span>↓</span></div>
+      </section>
+
+      <section className="statement shell" id="companion">
+        <span className="sectionNo">01 / COMPANION</span>
+        <h2>不是把聊天放进硬件。<br />是让一个角色，<em>持续生活在你身边。</em></h2>
+        <p>从清晨提醒、白天陪伴到深夜的一句晚安，D1 把感知、记忆、理解与行动连接成一段真实延续的关系。</p>
+      </section>
+
+      <section className="abilitySection">
+        <div className="shell abilityGrid">
+          {abilities.map(([number, title, text]) => <article key={number}><small>{number}</small><h3>{title}</h3><p>{text}</p></article>)}
+        </div>
+      </section>
+
+      <section className="daily shell">
+        <div className="dailyVisual">
+          <Image src="/product/d1-lifestyle-generated-v3.png" alt="用户与灵伴 D1 相处的日常" width={1586} height={992} unoptimized />
+          <span className="time">20:47</span>
+          <div className="quote"><small>结合上次的相处偏好</small><span>“你昨天说，忙完想先安静一会儿。灯调暗了，我先陪你坐会儿。”</span></div>
+        </div>
+        <div className="dailyCopy"><span className="sectionNo">A DAY WITH D1</span><h2>它记住的不只是信息，<br />还有共同生活的上下文。</h2><p>它知道你的起床时间，记得昨天没完成的工作，也能感知疲惫。合适的陪伴，不一定是追问，有时只是替你调好温度，静静待在身边。</p><ul><li><b>主动陪伴</b><span>在合适的时间出现，而不是等待唤醒词</span></li><li><b>情绪理解</b><span>从语气、表情与情境理解你的真实状态</span></li><li><b>连接生活</b><span>联动日程、任务与智能家居服务</span></li></ul></div>
+      </section>
+
+      <section className="relationship" id="relationship">
+        <div className="shell">
+          <div className="relationshipIntro"><span className="sectionNo">02 / RELATIONSHIP INTELLIGENCE</span><h2>真正的陪伴，<br />不是把每句话说得更甜。</h2><p>一句回复是否温柔并不够。更重要的是：它有没有理解你真正担心的事，尊重你的节奏，并让关系继续靠近，而不是停住或破裂。</p></div>
+          <div className="relationshipGrid">{relationshipSkills.map(([title, text], index) => <article key={title}><small>0{index + 1}</small><h3>{title}</h3><p>{text}</p></article>)}</div>
+          <div className="companionFlow"><div><small>PERCEPTION</small><b>感知</b><span>人、情绪与环境</span></div><i>→</i><div><small>UNDERSTANDING</small><b>理解</b><span>情境、记忆与关系</span></div><i>→</i><div><small>JUDGEMENT</small><b>判断</b><span>回应、行动或沉默</span></div><i>→</i><div><small>EXPRESSION</small><b>表达</b><span>语言、表情与服务</span></div><i>→</i><div><small>GROWTH</small><b>成长</b><span>反馈进入长期关系</span></div></div>
+        </div>
+      </section>
+
+      <section className="d1Section" id="d1">
+        <div className="shell">
+          <div className="sectionHead light"><span className="sectionNo">03 / D1 HARDWARE</span><h2>它的感官，<br />也是它的身体。</h2><p>透明角色舱、麦克风、摄像头、触摸与设备状态，让 AI 不再藏在语音背后，而是能够理解真实环境、自然表达的空间存在。</p></div>
+          <div className="finishStage">
+            <Image src={finishes[finish][1]} alt={`灵伴 D1 ${finishes[finish][0]}渲染图`} width={1248} height={702} unoptimized />
+            <div className="finishInfo"><small>CMF COLLECTION</small><b>{finishes[finish][0]}</b><span>透明数字人舱 · 环形氛围灯 · 模块化机甲结构</span></div>
+          </div>
+          <div className="finishTabs">{finishes.map(([name], index) => <button className={finish === index ? "active" : ""} onClick={() => setFinish(index)} key={name}><i />{name}</button>)}</div>
+          <div className="d1Features"><article><b>360°</b><span>环绕式角色呈现</span></article><article><b>REAL-TIME</b><span>表情、动作实时反馈</span></article><article><b>MODULAR</b><span>可组合机甲底座</span></article><article><b>PORTABLE</b><span>提手式便携设计</span></article></div>
+        </div>
+      </section>
+
+      <section className="films shell" id="films">
+        <div className="sectionHead"><span className="sectionNo">04 / FILMS</span><h2>看见陪伴，如何发生</h2><p>两支影片，从真实的一天到 D1 背后的完整产品能力。</p></div>
+        <div className="filmGrid">
+          <article><video controls preload="metadata" poster="/product/d1-lifestyle-generated-v3.png"><source src="/product/story-film.mp4" type="video/mp4" /></video><div><small>FILM 01 · BRAND STORY</small><h3>有你陪着，我真好</h3><p>一个人生活，也可以有人记得你的每一天。</p></div></article>
+          <article><video controls preload="metadata" poster="/product/product-poster.jpg"><source src="/product/product-film.mp4" type="video/mp4" /></video><div><small>FILM 02 · PRODUCT</small><h3>认识灵伴 D1</h3><p>从实时角色、长期记忆到开放创作生态。</p></div></article>
+        </div>
+      </section>
+
+      <section className="platform" id="platform">
+        <div className="shell platformGrid">
+          <div><span className="sectionNo">05 / AGENT PLATFORM</span><h2>模型可以更换，<br />关系不会重置。</h2><p>大模型提供通用智能，灵伴智能体中枢持续维护身份、记忆、关系、主动判断与安全边界，把可替换的模型能力组织成不可轻易替换的长期关系。</p><div className="modelRow"><span>OpenAI</span><span>DeepSeek</span><span>Qwen</span><span>Doubao</span><span>Meta</span></div></div>
+          <div className="platformCards"><article><small>01</small><b>稳定身份</b><p>角色、人格与关系阶段由同一个 Agent 持续统筹。</p></article><article><small>02</small><b>双向记忆</b><p>理解用户，也积累 Agent 自己的经历、承诺与成长。</p></article><article><small>03</small><b>质量闭环</b><p>关键交互可回放、可评测，让问题成为持续优化样本。</p></article><article><small>04</small><b>开放能力</b><p>灵活连接模型、3D 资产、技能、设备与家庭服务。</p></article></div>
+        </div>
+      </section>
+
+      <section className="trust shell"><div><span className="sectionNo">06 / TRUST</span><h2>越亲近，<br />越需要清晰的边界。</h2></div><div className="trustList"><article><b>隐私可控</b><p>相机、麦克风、记忆和设备控制，都有明确状态与权限。</p></article><article><b>记忆可管理</b><p>重要记忆可以查看、纠正或删除，不让关系成为黑盒。</p></article><article><b>不诱导依赖</b><p>不冒充治疗师，不做无法兑现的永久承诺，始终支持用户回到现实生活与真实关系。</p></article><article><b>行动可确认</b><p>涉及账号、设备与高风险服务的操作，需要明确授权。</p></article></div></section>
+
+      <section className="faq shell"><div><span className="sectionNo">FAQ</span><h2>你可能还想知道</h2></div><div>{faqs.map(([q, a], index) => <button key={q} onClick={() => setFaq(faq === index ? -1 : index)} aria-expanded={faq === index}><span><b>{q}</b><em>{faq === index ? "−" : "+"}</em></span>{faq === index && <p>{a}</p>}</button>)}</div></section>
+
+      <section className="contact shell" id="contact"><div><span>LINGBAN D1</span><h2>让喜欢的角色，<br />真正来到你身边。</h2><p>首批体验计划即将开启。</p></div><a href="mailto:hello@lingban.ai?subject=预约灵伴 D1 产品体验">预约产品体验 <b>→</b></a></section>
+
+      <footer className="footer shell"><a className="brand" href="#top"><i aria-hidden="true" />灵伴</a><p>有记忆、懂情绪、能陪伴的 AI 角色终端</p><span>© 2026 Lingban AI</span></footer>
+    </main>
+  );
+}
