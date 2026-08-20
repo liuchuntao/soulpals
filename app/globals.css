@@ -66,3 +66,6 @@
 .faq{padding-bottom:42px}.footer{margin-top:0}@media(max-width:600px){.faq{padding-bottom:34px}.footer{margin-top:0}}
 
 @media(min-width:901px){.films .sectionHead{grid-template-columns:.35fr 1.05fr 1.3fr}.films .sectionHead>p{white-space:nowrap}}
+
+/* Generated D1 character variants have a white studio background; blend it into the stage. */
+.heroProduct>img,.momentVisual>img{mix-blend-mode:normal}
