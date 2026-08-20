@@ -6,8 +6,8 @@ import Image from "next/image";
 const companionMoments = [
   { time: "07:30", period: "清晨", title: "知道怎样叫醒你", quote: "今天九点有会。比平时早十分钟叫你，窗帘先开到一半。", signal: "日程提前 · 昨晚睡得较晚", action: "渐亮灯光 · 轻声唤醒", ability: "感知现实", image: "/product/d1-wave-transparent.png", expression: "清晨挥手问候" },
   { time: "14:20", period: "白天", title: "让关系跨过每次对话", quote: "昨天那份方案还差最后一页。需要我把你记下的三个要点找出来吗？", signal: "延续昨日任务 · 识别当前工作", action: "找回笔记 · 等待确认", ability: "延续关系", image: "/product/d1-thinking-transparent.png", expression: "白天专注思考" },
-  { time: "20:47", period: "回家", title: "知道什么时候不该追问", quote: "你昨天说，忙完想先安静一会儿。灯调暗了，我先陪你坐会儿。", signal: "语速变慢 · 延续相处偏好", action: "调暗灯光 · 保持安静", ability: "判断时机", image: "/product/d1-cylinder-only.png", expression: "回家俏皮回应" },
-  { time: "23:40", period: "深夜", title: "把关心变成真实行动", quote: "复诊资料和明早的路线都准备好了。现在不用操心，去睡吧。", signal: "记得明日复诊 · 时间已晚", action: "整理资料 · 设置提醒", ability: "具身行动", image: "/product/d1-calm.png", expression: "深夜安心陪伴" },
+  { time: "20:47", period: "回家", title: "知道什么时候不该追问", quote: "你昨天说，忙完想先安静一会儿。灯调暗了，我先陪你坐会儿。", signal: "语速变慢 · 延续相处偏好", action: "调暗灯光 · 保持安静", ability: "判断时机", image: "/product/d1-calm-clean.png", expression: "回家安静倾听" },
+  { time: "23:40", period: "深夜", title: "把关心变成真实行动", quote: "复诊资料和明早的路线都准备好了。现在不用操心，去睡吧。", signal: "记得明日复诊 · 时间已晚", action: "整理资料 · 设置提醒", ability: "具身行动", image: "/product/d1-goodnight-clean.png", expression: "深夜闭眼晚安" },
 ];
 
 const relationshipSkills = [
@@ -61,7 +61,7 @@ export default function Home() {
           </div>
           <div className="heroProduct">
             <div className="orbit orbitOne" /><div className="orbit orbitTwo" />
-            <Image src="/product/d1-wave-transparent.png" alt="灵伴 D1 数字生命舱，角色挥手问候" width={353} height={661} priority unoptimized />
+            <Image src="/product/d1-cylinder-only.png" alt="灵伴 D1 数字生命舱，角色俏皮回应" width={353} height={661} priority unoptimized />
             <div className="floatCard memory"><small>LONG-TERM MEMORY</small><b>记得你昨天没睡好</b><span>已调整今早的唤醒方式</span></div>
             <div className="floatCard online"><i /> 角色在线 · 正在看着你</div>
           </div>
