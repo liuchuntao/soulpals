@@ -3,11 +3,11 @@
 import { useState } from "react";
 import Image from "next/image";
 
-const abilities = [
-  ["01", "感知现实", "通过声音、画面、触摸和设备状态，理解谁在场、发生了什么。"],
-  ["02", "延续关系", "记住共同经历、偏好与承诺，即使更换模型，关系也不会重置。"],
-  ["03", "判断时机", "结合情绪、情境与关系，决定回应、询问、行动，还是保持安静。"],
-  ["04", "具身行动", "用 3D 表情、动作和声音自然表达，也能连接设备与现实服务。"],
+const companionMoments = [
+  { time: "07:30", period: "清晨", title: "知道怎样叫醒你", quote: "今天九点有会。比平时早十分钟叫你，窗帘先开到一半。", signal: "日程提前 · 昨晚睡得较晚", action: "渐亮灯光 · 轻声唤醒", ability: "感知现实" },
+  { time: "14:20", period: "白天", title: "让关系跨过每次对话", quote: "昨天那份方案还差最后一页。需要我把你记下的三个要点找出来吗？", signal: "延续昨日任务 · 识别当前工作", action: "找回笔记 · 等待确认", ability: "延续关系" },
+  { time: "20:47", period: "回家", title: "知道什么时候不该追问", quote: "你昨天说，忙完想先安静一会儿。灯调暗了，我先陪你坐会儿。", signal: "语速变慢 · 延续相处偏好", action: "调暗灯光 · 保持安静", ability: "判断时机" },
+  { time: "23:40", period: "深夜", title: "把关心变成真实行动", quote: "复诊资料和明早的路线都准备好了。现在不用操心，去睡吧。", signal: "记得明日复诊 · 时间已晚", action: "整理资料 · 设置提醒", ability: "具身行动" },
 ];
 
 const relationshipSkills = [
@@ -34,6 +34,7 @@ const faqs = [
 export default function Home() {
   const [finish, setFinish] = useState(0);
   const [faq, setFaq] = useState(0);
+  const [moment, setMoment] = useState(2);
 
   return (
     <main>
@@ -42,7 +43,7 @@ export default function Home() {
         <div className="navLinks">
           <a href="#companion">陪伴体验</a><a href="#relationship">关系能力</a><a href="#d1">D1 机甲</a><a href="#platform">智能体中枢</a>
         </div>
-        <a className="navCta" href="#contact">预约体验</a>
+        <a className="navCta" href="/contact">联系我们</a>
       </nav>
 
       <section className="hero" id="top">
@@ -60,7 +61,7 @@ export default function Home() {
           </div>
           <div className="heroProduct">
             <div className="orbit orbitOne" /><div className="orbit orbitTwo" />
-            <Image src="/product/d1-hero.png" alt="灵伴 D1 主机与四足机甲底座" width={1248} height={702} priority unoptimized />
+            <Image src="/product/d1-cylinder-only.png" alt="灵伴 D1 数字生命舱" width={353} height={661} priority unoptimized />
             <div className="floatCard memory"><small>LONG-TERM MEMORY</small><b>记得你昨天没睡好</b><span>已调整今早的唤醒方式</span></div>
             <div className="floatCard online"><i /> 角色在线 · 正在看着你</div>
           </div>
@@ -68,15 +69,14 @@ export default function Home() {
         <div className="scrollHint">向下探索 <span>↓</span></div>
       </section>
 
-      <section className="statement shell" id="companion">
-        <span className="sectionNo">01 / COMPANION</span>
-        <h2>不是把聊天放进硬件。<br />是让一个角色，<em>持续生活在你身边。</em></h2>
-        <p>从清晨提醒、白天陪伴到深夜的一句晚安，D1 把感知、记忆、理解与行动连接成一段真实延续的关系。</p>
-      </section>
-
-      <section className="abilitySection">
-        <div className="shell abilityGrid">
-          {abilities.map(([number, title, text]) => <article key={number}><small>{number}</small><h3>{title}</h3><p>{text}</p></article>)}
+      <section className="companionDay" id="companion">
+        <div className="shell">
+          <div className="dayHeading"><span className="sectionNo">01 / A DAY WITH D1</span><h2>不是等待下一次唤醒，<br />而是<em>持续参与你的一天。</em></h2><p>从清晨到深夜，D1 在感知、记忆、判断与行动中延续与你的关系。</p></div>
+          <div className="dayTimeline" role="tablist" aria-label="一天的陪伴场景">{companionMoments.map((item, index) => <button role="tab" aria-selected={moment === index} className={moment === index ? "active" : ""} onClick={() => setMoment(index)} key={item.time}><small>{item.time}</small><b>{item.period}</b><span>{item.ability}</span></button>)}</div>
+          <div className="momentStage" key={moment}>
+            <div className="momentVisual"><div className="momentOrbit" /><Image src="/product/d1-cylinder-only.png" alt="灵伴 D1 数字生命舱" width={353} height={661} unoptimized /><span className="momentStatus"><i />{companionMoments[moment].time} · {companionMoments[moment].period}</span></div>
+            <div className="momentStory"><span className="momentAbility">{companionMoments[moment].ability}</span><h3>{companionMoments[moment].title}</h3><blockquote>“{companionMoments[moment].quote}”</blockquote><div className="momentEvidence"><p><small>它注意到</small><b>{companionMoments[moment].signal}</b></p><i>→</i><p><small>它决定</small><b>{companionMoments[moment].action}</b></p></div></div>
+          </div>
         </div>
       </section>
 
@@ -128,9 +128,9 @@ export default function Home() {
 
       <section className="faq shell"><div><span className="sectionNo">FAQ</span><h2>你可能还想知道</h2></div><div>{faqs.map(([q, a], index) => <button key={q} onClick={() => setFaq(faq === index ? -1 : index)} aria-expanded={faq === index}><span><b>{q}</b><em>{faq === index ? "−" : "+"}</em></span>{faq === index && <p>{a}</p>}</button>)}</div></section>
 
-      <section className="contact shell" id="contact"><div><span>LINGBAN D1</span><h2>让喜欢的角色，<br />真正来到你身边。</h2><p>首批体验计划即将开启。</p></div><a href="mailto:service@soulpals.ai?subject=预约灵伴 D1 产品体验">预约产品体验 <b>→</b></a></section>
+      <section className="contact shell" id="contact"><div><span>LINGBAN D1</span><h2>让喜欢的角色，<br />真正来到你身边。</h2><p>首批体验计划即将开启。</p></div><a href="mailto:service@soulpals.com?subject=预约灵伴 D1 产品体验">预约产品体验 <b>→</b></a></section>
 
-      <footer className="footer shell"><a className="brand" href="#top"><i aria-hidden="true" />灵伴</a><p>有记忆、懂情绪、能陪伴的 AI 角色终端</p><span>© 2026 Lingban AI</span></footer>
+      <footer className="footer"><div className="footerInner shell"><div className="footerBlock footerRecord">备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">京ICP备2024099740号-4</a></div><div className="footerBlock footerCopyright">Copyright © 2026 北京灵伴工坊科技有限公司 All rights reserved.</div><nav className="footerBlock footerPolicies" aria-label="政策与联系"><a href="/privacy">隐私政策</a><span>｜</span><a href="/terms">用户服务协议</a><span>｜</span><a href="/minor-protect">未成年人保护政策</a><span>｜</span><a href="/contact">联系我们</a></nav></div></footer>
     </main>
   );
 }
