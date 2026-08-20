@@ -128,8 +128,6 @@ export default function Home() {
 
       <section className="faq shell"><div><span className="sectionNo">FAQ</span><h2>你可能还想知道</h2></div><div>{faqs.map(([q, a], index) => <button key={q} onClick={() => setFaq(faq === index ? -1 : index)} aria-expanded={faq === index}><span><b>{q}</b><em>{faq === index ? "−" : "+"}</em></span>{faq === index && <p>{a}</p>}</button>)}</div></section>
 
-      <section className="contact shell" id="contact"><div><span>LINGBAN D1</span><h2>让喜欢的角色，<br />真正来到你身边。</h2><p>首批体验计划即将开启。</p></div><a href="mailto:service@soulpals.com?subject=预约灵伴 D1 产品体验">预约产品体验 <b>→</b></a></section>
-
       <footer className="footer"><div className="footerInner shell"><div className="footerBlock footerRecord">备案号：<a href="https://beian.miit.gov.cn/" target="_blank" rel="noreferrer">京ICP备2024099740号-4</a></div><div className="footerBlock footerCopyright">Copyright © 2026 北京灵伴工坊科技有限公司 All rights reserved.</div><nav className="footerBlock footerPolicies" aria-label="政策与联系"><a href="/privacy">隐私政策</a><span>｜</span><a href="/terms">用户服务协议</a><span>｜</span><a href="/minor-protect">未成年人保护政策</a><span>｜</span><a href="/contact">联系我们</a></nav></div></footer>
     </main>
   );
