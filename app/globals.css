@@ -64,3 +64,5 @@
 .footerInner{display:flex;justify-content:center;align-items:center;flex-wrap:wrap;gap:12px 28px}.footerBlock{min-height:0;padding:0;border:0!important;text-align:center}.footerPolicies{justify-content:center}.footerPolicies.footerBlock{border:0}@media(max-width:600px){.footerInner{flex-direction:column;gap:9px}.footerBlock{padding:0;text-align:center}}
 
 .faq{padding-bottom:42px}.footer{margin-top:0}@media(max-width:600px){.faq{padding-bottom:34px}.footer{margin-top:0}}
+
+@media(min-width:901px){.films .sectionHead{grid-template-columns:.35fr 1.05fr 1.3fr}.films .sectionHead>p{white-space:nowrap}}

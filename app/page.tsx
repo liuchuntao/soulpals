@@ -110,7 +110,7 @@ export default function Home() {
       </section>
 
       <section className="films shell" id="films">
-        <div className="sectionHead"><span className="sectionNo">04 / FILMS</span><h2>看见陪伴，如何发生</h2><p>两支影片，从真实的一天到 D1 背后的完整产品能力。</p></div>
+        <div className="sectionHead"><span className="sectionNo">04 / FILMS</span><h2>看见陪伴，如何发生</h2><p>两段视频，从真实的一天到 D1 背后的完整产品能力。</p></div>
         <div className="filmGrid">
           <article><video controls preload="metadata" poster="/product/d1-lifestyle-generated-v3.png"><source src="/product/story-film.mp4" type="video/mp4" /></video><div><small>FILM 01 · BRAND STORY</small><h3>有你陪着，我真好</h3><p>一个人生活，也可以有人记得你的每一天。</p></div></article>
           <article><video controls preload="metadata" poster="/product/product-poster.jpg"><source src="/product/product-film.mp4" type="video/mp4" /></video><div><small>FILM 02 · PRODUCT</small><h3>认识灵伴 D1</h3><p>从实时角色、长期记忆到开放创作生态。</p></div></article>
